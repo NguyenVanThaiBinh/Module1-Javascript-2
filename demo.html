@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
+  <body>
     <script>
-        let kt=parseInt(prompt("diem kiem tra")) ;
-        let gk=parseInt(prompt("diem giua ki"));
-        let ck=parseInt(prompt("diem cuoi ki"));
-        let dtb=(kt+2*gk+3*ck)/6;
-        if(dtb>=8){
-            alert("Hoc sinh gioi");
+
+                                                     // In ra bảng số từ 0 đến 100
+
+      let sout;
+      sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+      for (i = 1; i <= 10; i++) {
+        sout = sout + "<tr>";
+        for (j = 1; j <= 10; j++) {
+          sout = sout + "<td>" + i * j + "</td>";
         }
+        sout = sout + "</tr>";
+      }
+      sout = sout + "</table>";
+      document.write(sout);
     </script>
-</body>
+
+                                                    <!-- Nhập vào số từ 1 đến 10 -->
+    <!-- <script>
+      let value = null;
+      do {
+        value = prompt("Nhập vào số từ 1 -> 10");
+      } while (value < 1 || value > 10);
+      alert("Số bạn vừa nhập là " + value);
+    </script> -->
+                                                         <!-- In dãy hr hình tam giác -->
+    <!-- <script>
+      let i = 1;
+
+      while (i < 100) {
+        //phân thân vòng lặp
+        document.write("<hr width = " + i + "%>");
+        i++;
+      }
+    </script> -->
+                                                         <!-- In dãy số từ 1 đến 5 -->
+    <!-- <h2>JavaScript Loops</h2>
+    <p id="demo"></p>
+    <script>
+    let text = "";
+    let i;
+    for (i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+    </script> -->
+  </body>
 </html>

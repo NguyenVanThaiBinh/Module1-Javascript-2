@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // nhap 3 so a, b, c in ra theo thu tu
+      let number1 = +prompt("Nhap so 1");
+      let number2 = +prompt("Nhap so 2");
+      let number3 = +prompt("Nhap so 3");
+      let result = "";
+      if (number1 > number2 && number1 > number3) {
+        result += number1 + ", ";
+        if (number2 > number3) {
+          result += number2 + ", " + number3;
+        } else result += number3 + ", " + number2;
+      }
+      if (number2 > number1 && number2 > number3) {
+        result += number2 + ", ";
+        if (number1 > number3) {
+          result += number1 + ", " + number3;
+        } else result += number3 + ", " + number1;
+      }
+      if (number3 > number2 && number3 > number1) {
+        result += number3 + ", ";
+        if (number2 > number1) {
+          result += number2 + ", " + number1;
+        } else result += number1 + ", " + number2;
+      }
+
+      alert(`Sap xep theo thu tu la: ${result}`);
+    </script>
+  </body>
+</html>
