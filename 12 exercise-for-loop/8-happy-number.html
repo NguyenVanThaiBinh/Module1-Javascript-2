@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let temp = +prompt("Nhap so can kiem tra happy number:");
+      let sum = 0;
+
+      while (temp > 0) {
+        // 49 =16 +81---97 =81 +49
+        let remainder = temp % 10;
+        sum += remainder * remainder;
+        temp = parseInt(temp / 10);
+      }
+
+      while (sum >= 10) {
+        temp = sum;
+        sum = 0;
+        while (temp > 0) {
+          // 49 =16 +81---97 =81 +49
+          let remainder = temp % 10;
+          sum += remainder * remainder;
+          temp = parseInt(temp / 10);
+        }
+      }
+
+      if (sum == 1) {
+        alert("Do la so happy number");
+      } else alert("Khong la so happy number");
+
+      
+    </script>
+  </body>
+</html>
