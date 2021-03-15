@@ -7,13 +7,19 @@
     <title>Document</title>
   </head>
   <body>
+    <p>Click the button to check if is an array or not.</p>
+    <p> var fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
     <script>
-      var is_array = function (input) {
-        if (toString.call(input) === "[object Array]") return true;
-        return false;
-      };
-      console.log(is_array("w3resource"));
-      console.log(is_array([1, 2, 4, 0]));
+      function myFunction() {
+        var fruits = [1,5,7,"jfuj"];
+
+        document.getElementById("demo").innerHTML = fruits =Array.isArray(fruits);
+      }
     </script>
   </body>
 </html>
