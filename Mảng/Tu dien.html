@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Nhập từ cần tra</h2>
+    <input id="word" type="text" />
+
+    <button onclick="search()">Tìm kiếm</button>
+
+    <h3 id="result"></h3>
+    <script>
+      let array1 = ["hello", "bye", "eat", "sleep"];
+      let array2 = ["xin chào", "tạm biệt", "ăn", "ngủ"];
+      function search() {
+        // let a=document.getElementById("word").value;
+        // document.getElementById("result").innerHTML =a;
+        if (document.getElementById("word").value == "")
+        return document.getElementById("result").innerHTML = "Nhập cho đàng hoàng";
+
+        for (let i = 0; i < array1.length ; i++) {
+          if (document.getElementById("word").value == array1[i]) {
+            document.getElementById("result").innerHTML = array2[i];
+            break;
+          } else
+            document.getElementById("result").innerHTML = "Không có dữ liệu";
+        }
+      }
+    </script>
+  </body>
+</html>
