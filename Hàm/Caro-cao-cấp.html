@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caro</title>
+    <style>
+      td {
+        text-align: center;
+        font-size: 35px;
+        width: 40px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Caro Thấp Cấp</h1>
+
+    <table id="myTable" border="1"></table>
+    <script>
+      //  truyền đến bảng tạo ở HTML
+      var table = document.getElementById("myTable");
+      for (var j = 0; j < 8; j++) {
+        // thêm hàng
+        var row = table.insertRow(j);
+        // thêm  cột
+        // caro += [j];
+        for (let i = 0; i < 9; i++) {
+          let cell = row.insertCell(i);
+          cell.id = `${i}${j}`;
+          //cell.innerHTML = `<button   onclick="my_onclick()"></button>`;
+        }
+      }
+      let play1 = 0;
+      table.addEventListener("click", function (e) {
+        console.dir(e.target);
+        const target = e.target;
+        
+        if (target.localName != "td") return;
+        if (play1 == 0) {
+          target.innerText = "X";
+          play1 = 1;}
+        if(play1 ==1){
+          target.innerText = "O";
+          play1 = 0;}
+        }
+        
+      );
+      
+     
+    </script>
+  </body>
+</html>

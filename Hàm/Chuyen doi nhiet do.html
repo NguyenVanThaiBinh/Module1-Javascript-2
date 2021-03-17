@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <h1>Chuyển đổi nhiêt độ</h1>
+
+      <b>Nhập nhiệt độ Fahrenheit</b>
+      <input id="nhietdof" type="number" />
+      <button onclick="converTemp()">Kiểm tra</button>
+      <br /><br />
+      Nhiệt độ C là:
+      <input id="nhietdoc" type="text" />
+      <p id="out"></p>
+
+      <script>
+       
+
+        
+
+        
+
+        function converTemp() {
+            let temper = document.getElementById("nhietdof").value;
+        
+          document.getElementById("nhietdoc").value =  parseInt((temper - 32) / 1.8);
+        }
+      </script>
+    </form>
+  </body>
+</html>
