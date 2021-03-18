@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 350px;
+        height: 300px;
+        text-align: center;
+      }
+      .center {
+        margin-left: 500px;
+      }
+      button {
+        margin-left: 15px;
+        width: 150px;
+        height: 50px;
+        background-color: gray;
+      }
+      button:hover {
+        background-color: rgb(224, 6, 35);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <button id="undertriangle" onclick="showUnderTriangle(matrix)">
+        Show Under Triangle
+      </button>
+
+      <button id="uptriangle">Show Up Triangle</button>
+      <br /><br />
+      <table border="1">
+        <tbody></tbody>
+      </table>
+
+      <script src="Matrix-2D.js"></script>
+      <script>
+        let matrix = generateMatrix(6);
+        generateTable(matrix);
+        // 0: (5) [3, 1, 4, 4, 2]
+        // 1: (5) [4, 2, 3, 2, 1]
+        // 2: (5) [5, 3, 2, 2, 4]
+        // 3: (5) [5, 2, 2, 4, 5]
+        // 4: (5) [3, 5, 2, 5, 4]
+        function showUnderTriangle(matrix) {
+          let n = matrix.length ;
+          let m = matrix.length - 1;
+          for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < n; j++) {
+              matrix[ m - (matrix.length - 1)][j] = 0;
+              generateTable(matrix); 
+            }
+            n--; //n=3
+            m++;
+
+            
+          }
+          
+        }
+
+        // n++;
+        // for (let j = 0; j <n-1 ; j++) {
+        //   matrix[n-matrix.length][j + 2] = 0;
+
+        function inputInterger(msg) {
+          let number = 0;
+          do {
+            number = Number(prompt(msg));
+          } while (isNaN(number) || !Number.isInteger(number) || number <= 0);
+          return number;
+        }
+
+        function generateMatrix(number) {
+          let caro = [];
+          for (let i = 0; i < number; i++) {
+            let arr = [];
+            for (let j = 0; j < number; j++) {
+              let random = Math.floor(Math.random() * 5 + 1);
+              arr[j] = random;
+            }
+            caro.push(arr);
+          }
+          return caro;
+        }
+
+        function totalAroundMatrix() {
+          return (
+            sumDoc1(matrix) +
+            sumDoc2(matrix) +
+            sumNgang1(matrix) +
+            sumNgang2(matrix)
+          );
+        }
+        function generateTable(matrix) {
+          let table_str = "";
+          for (let i = 0; i < matrix.length; i++) {
+            table_str += "<tr>";
+            for (let j = 0; j < matrix[i].length; j++) {
+              table_str += "<td>" + matrix[i][j] + "</td>";
+            }
+            table_str += "</tr>";
+          }
+          let tbody = document.getElementsByTagName("tbody")[0];
+          tbody.innerHTML = table_str;
+        }
+
+        // let row = inputInterger("input row:");
+
+        let total = totalAroundMatrix();
+        document.write(
+          `<br>Tổng các phần từ xung quanh trong matrix:
+              ${total}`
+        );
+
+        document.write(
+          `<br><br>Tổng các phần từ ở đường chéo phụ trong matrix:
+              ${sumLine(matrix)}`
+        );
+
+        document.write(
+          `<br><br>Tổng các phần từ ở đường chéo chính trong matrix:  ${sumMainLine(
+            matrix
+          )}`
+        );
+
+        document.write(
+          `<br><br> Tổng các phần từ chẵn trong matrix:  ${sumEven(matrix)}`
+        );
+      </script>
+    </div>
+  </body>
+</html>
