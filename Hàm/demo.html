@@ -5,20 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
-    <script src="isPrime.js">
-        
-         
+   <script>
+    //    var person = {fname: "John", lname: "DOe",age: 25};
+    //    let txt = "";
+    //    for(x in person){
+    //        txt += person[x];
+    //    }
+     var Cirle = function(radius){
+         this.getRadius = function(){
+             return radius ;
+         }
+         this.getArea = function(){
+             return Math.PI*radius*radius;
+         }
+     };
+     var cirle = new Cirle(2);
+     cirle.getArea(); //2
+     cirle.getRadius();//12.56
+
+
+   </script>
    
-    </script>
-    <script>
-        // let result = prompt("Input number");
-        // alert(isPrime(result)) ;
-        let number = prompt("Input number");
-        if (!Number.isInteger(number) || number <= 0) {
-            alert("true");
-        }
-    </script>
+   
 </body>
 </html>
